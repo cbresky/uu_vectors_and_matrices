@@ -1,0 +1,24 @@
+Evaluation of Genre Retrieval Systems: 
+
+- I evaluated the top three song recommendations based on TF-IDF-based raw inner product, centered inner product, cosine similarity, 
+and cosine similarity. In evaluating these methods, I compared each recommendation's genre to the query's song genre
+to determine if they were a match, where a 'hit' of True meant that the genres matched. Comparing the these performances, 
+the highest precision@3 was the TF-IDF cosine similarity, with a value of 0.210. The next best performer was raw cosine similarity, 
+with a precision@3 value of 0.191. The raw dot product performed the worst, with a precision@3 of 0.093. So, only around 9.3%
+of the recommendations had matches to the query song's genre. Overall, the TF-IDF cosine similarity seemed to be the most reliable
+choice for this recommendation system based on lyric comparisons.
+
+- TF-IDF Cosine similarity and correlation tended to agree more on their recommendations. One specific example was for 
+"All The Things You Are" by Michael Jackson. TF-IDF correlation and cosine similarity generated the same three recommendations,
+while the TF-IDF centered inner product and raw dot product shared the same top recommendation, "Happy Boys & Girls". 
+
+- In an attempt to improve upon this performance, I data engineered a version of the highest performer, TF-IDF cosine similarity,
+to remove common "filler" words that might be noisy when it comes to finding similar songs. I did this by filtering out words
+that appeared in more than 70% of the songs. In this new version, the precision@3 was 0.209. So, it performed better than the
+raw inner product and raw cosine similarity, but slightly worse than the TF-IDF cosine score, by a difference of 0.001.
+So, some of the words I removed may have contained helpful information for distinguishing between songs and genres, or at least,
+removing these words did not provide any additional benefit.
+
+- Out of the above options, I would recommend using the TF-IDF cosine similarity for lyrics based genre comparison.
+Of course, lyrics are likely only a small piece of what makes two songs "similar", and future testing could explore 
+the incorporation of additional information, such as specific audio features like tempo, to determine song similarity.
