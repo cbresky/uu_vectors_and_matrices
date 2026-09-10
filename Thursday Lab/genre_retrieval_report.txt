@@ -2,7 +2,7 @@ Evaluation of Genre Retrieval Systems:
 
 - I evaluated the top three song recommendations based on TF-IDF-based raw inner product, centered inner product, cosine similarity, 
 and cosine similarity. In evaluating these methods, I compared each recommendation's genre to the query's song genre
-to determine if they were a match, where a 'hit' of True meant that the genres matched. Comparing the these performances, 
+to determine if they were a match, where a 'hit' of True meant that the genres matched. Comparing their performances, 
 the highest precision@3 was the TF-IDF cosine similarity, with a value of 0.210. The next best performer was raw cosine similarity, 
 with a precision@3 value of 0.191. The raw dot product performed the worst, with a precision@3 of 0.093. So, only around 9.3%
 of the recommendations had matches to the query song's genre. Overall, the TF-IDF cosine similarity seemed to be the most reliable
